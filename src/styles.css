@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+@font-face {
+    font-family: Lato;
+    src: url(assets/font/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url(assets/font/FontsFree-Net-Gilroy-Heavy.ttf);
+}
+
+@font-face {
+    font-family: 'Mr Banks';
+    src: url(assets/font/MrBanks-Black.otf);
+}
+
+@font-face {
+    font-family: 'Public Sans';
+    src: url(assets/font/PublicSans-Light.woff);
+}
+
+.main-page {
+    background: url(./assets/image/bg_m_n.png);
+    overflow: hidden;
+    max-width: 720px;
+    --bs-gutter-x: 0rem;
+}
+
+/* ------ CUSTOMIZE HEADER START ------ */
+
+/* Carousel base class */
+.carousel {
+    margin-bottom: 4rem;
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+    height: 225px;
+}
+
+.carousel-indicators {
+    text-align: right;
+    float: right;
+    left: inherit;
+    margin-right: 5%;
+    top: 0;
+}
+
+.carousel-indicators button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 100%;
+    background-color: #FFFFFF;
+    opacity: 1 !important;
+}
+
+.carousel-indicators button.active {
+    background-color: #D53B35;
+}
+/* ------ CUSTOMIZE HEADER END ------ */

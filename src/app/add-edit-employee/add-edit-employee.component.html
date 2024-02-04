@@ -1,0 +1,59 @@
+<div class="d-flex flex-row mb-3">
+    <div class="col-md-5 col-lg-5 p-2">
+        <div class="input-group mb-4">
+            <span class="input-group-text">Name</span>
+            <input type="text" id="EmployeeName" class="form-control" [(ngModel)]="employee.EmployeeName">
+        </div>
+        <div class="input-group mb-4">
+            <span class="input-group-text">Location</span>
+            <select class="form-select" id="LocationID" [(ngModel)]="LocationID">
+                <option *ngFor="let item of LocationList" [ngValue]="item.LocationID">
+                    {{item.LocationName}}
+                </option>
+            </select>
+        </div>
+        <div class="input-group mb-4">
+            <span class="input-group-text">Title</span>
+            <select class="form-select" id="Title" [(ngModel)]="employee.Title">
+                <option *ngFor="let item of TitleList" [ngValue]="item.Title">
+                    {{item.Title}}
+                </option>
+            </select>
+        </div>
+        <div class="input-group mb-4">
+            <span class="input-group-text">Tag</span>
+            <input type="text" id="Tag" class="form-control" [(ngModel)]="employee.Tag">
+        </div>
+        <div class="input-group mb-4">
+            <span class="input-group-text">Tag2</span>
+            <input type="text" class="form-control" [(ngModel)]="employee.Tag2">
+        </div>
+        <div class="input-group mb-4">
+            <span class="input-group-text">Thứ tự</span>
+            <input type="number" id="Priority" class="form-control" [(ngModel)]="employee.Priority">
+        </div>
+        <div class="input-group mb-4">
+            <span class="input-group-text">Badge</span>
+            <input class="m-2" type="file" (change)="uploadPhotoBadge($event)">
+        </div>
+        <div class="image-badge mb-4">
+            <img width="60px" height="44px" [src]="BadgePath" />
+            <span class="btn-remove-image" (click)="removeBadge()">X</span>
+        </div>
+    </div>
+    <div class="col-md-3 col-lg-3">
+        <img width="100px" height="100px" [src]="PhotoFilePath" />
+        <input class="m-2" type="file" (change)="uploadPhoto($event)">
+    </div>
+    <div class="col-md-4 col-lg-4">
+        <img width="150px" height="150px" [src]="PhotoDetailFilePath" />
+        <input class="m-2" type="file" (change)="uploadPhotoDetail($event)">
+    </div>
+</div>
+<button type="button" (click)="addEmployee()" *ngIf="employee.EmployeeID == '0'" class="btn btn-primary">
+    Create
+</button>
+
+<button type="button" (click)="updateEmployee()" *ngIf="employee.EmployeeID != '0'" class="btn btn-primary">
+    Update
+</button>

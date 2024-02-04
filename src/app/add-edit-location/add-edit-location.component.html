@@ -1,0 +1,19 @@
+<div class="bd-highlight mb-3">
+    <div class="bd-highlight">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Name</span>
+            <input type="text" id="LocationName" class="form-control" [(ngModel)]="location.LocationName">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Chart</span>
+            <input type="number" id="Chart" class="form-control" [(ngModel)]="location.Chart">
+        </div>
+    </div>
+</div>
+<button type="button" (click)="addLocation()" *ngIf="location.LocationID =='0'" class="btn btn-primary">
+    Create
+</button>
+
+<button type="button" (click)="updateLocation()" *ngIf="location.LocationID !='0'" class="btn btn-primary">
+    Update
+</button>

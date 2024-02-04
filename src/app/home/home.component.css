@@ -1,0 +1,658 @@
+h1 {
+    font-family: 'Public Sans';
+}
+
+footer {
+    background-color: #FDF6EF;
+    height: 65px;
+    max-width: 720px;
+}
+
+footer .row {
+    height: 65px
+}
+
+
+footer p {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6.6px;
+    line-height: 8px;
+    color: #929292;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/* ------ CUSTOMIZE CONTENT START ------ */
+.countdown {
+    position: absolute;
+    width: 562.5px;
+    height: 161.67px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 185.83px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-hide {
+    display: none;
+}
+
+.countdown h1 {
+    font-family: 'Mr Banks';
+    font-style: normal;
+    font-weight: 800;
+    color: #D52B1E;
+    font-size: 36.6667px;
+    line-height: 44px;
+    text-align: center;
+    margin-top: 11px;
+}
+
+.countdown p {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 150%;
+    color: #585858;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+/* Bắt đầu CSS đồng hồ */
+.count-down-timer {
+    line-height: 99%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 210px;
+}
+
+.count-down-timer .wrapper .times {
+    display: grid;
+    grid-template-columns: 60px 10px 40px 10px 40px 10px 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 210px;
+}
+
+
+.count-down-timer .wrapper .times p {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 99%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.133333px;
+    color: rgba(213, 43, 30, 0.8);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Kết thúc CSS đồng hồ*/
+
+.tab {
+    margin-top: 130px;
+}
+
+.nav-tabs {
+    margin-left: 40px;
+    margin-right: 40px;
+    border-bottom: 1px solid rgba(32, 36, 146, 0.5);
+    margin-bottom: 13px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 77px !important;
+    height: 34px;
+}
+
+.nav-link {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 8.3px;
+    line-height: 99%;
+    text-align: center;
+    padding: 0;
+    color: #515151;
+}
+
+.nav-item.active {
+    padding: 0px 5px 0px 5px;
+    background: #212492;
+    border-radius: 16px 16px 0px 0px;
+    height: 34px;
+}
+
+.nav-item.active .nav-link {
+    color: #FFFFFF;
+    border: none;
+}
+
+.nav-all {
+    width: 70px !important;
+}
+
+.nav-search {
+    width: 26px !important;
+}
+
+.tab-sub {
+    margin-left: 79px;
+    margin-right: 79px;
+    margin-bottom: 20px;
+}
+
+.nav-sub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 25%;
+    height: 27px;
+}
+
+.nav-sub.active {
+    border-bottom: 1px solid #202492;
+}
+
+.nav-link-sub {
+    font-family: 'Gilroy';
+    font-weight: 900;
+    font-size: 10.6px;
+    line-height: 99%;
+    text-align: center;
+    padding: 0;
+    color: #777777;
+    text-decoration: none;
+}
+
+.nav-link-sub.active {
+    color: #212492;
+}
+
+.danhsach {
+    height: 623px;
+    width: 585px;
+    margin-left: 67px;
+    margin-right: 67px;
+    margin-bottom: 18px;
+    text-align: center;
+    position: relative;
+}
+
+.empty {
+    margin: auto;
+    background-image: url(../../assets/image/background.png);
+    background-repeat: no-repeat;
+    background-size: 432px 531px;
+    background-position: center center;
+    margin-bottom: 18px;
+}
+
+.box {
+    margin-bottom: 11px;
+    height: 142px;
+}
+
+.img-block {
+    position: relative;
+    width: 120px;
+    height: 142px;
+    margin: auto;
+}
+
+.nodata {
+    display: none;
+}
+
+.nodata-empty {
+    display: block;
+    width: 448px;
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10.6px;
+    line-height: 150%;
+    text-align: center;
+    color: #585858;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-left: 27%;
+    color: #000;
+    width: 42px;
+    height: 16px;
+    display: none;
+    border-radius: inherit;
+    z-index: 10;
+}
+
+.badge img {
+    width: 42px;
+    height: 16px;
+}
+
+.badge-active {
+    display: block;
+}
+
+.img-name {
+    height: 92.5px;
+    width: 92.5px;
+    margin: auto;
+    margin-top: 10px;
+    padding-top: 13px;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-bottom: 13px;
+}
+
+.title,
+.img-fluid,
+.name-page {
+    position: relative;
+}
+
+.name-page {
+    border-radius: 11px;
+    height: 45.67px;
+}
+
+.name-page-vo {
+    background-color: #DD921B;
+}
+
+.name-page-ad {
+    background-color: #6F95B5;
+}
+
+.name-page-ex {
+    background-color: #AA6729;
+}
+
+.name-page-jo {
+    background-color: #6E808E;
+}
+
+.name:hover,
+.name:active,
+.name:visited,
+.name:link {
+    text-decoration: none;
+}
+
+.img-vo {
+    position: absolute;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: url(../../assets/image/Voyager.png) no-repeat;
+    background-size: 110px 92.5px;
+    height: 92.5px;
+    width: 110px;
+    margin-top: -92.5px;
+}
+
+.img-ad {
+    position: absolute;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: url(../../assets/image/Adventure.png) no-repeat;
+    background-size: 110px 92.5px;
+    height: 92.5px;
+    width: 110px;
+    margin-top: -92.5px;
+}
+
+.img-ex {
+    position: absolute;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: url(../../assets/image/Explorer.png) no-repeat;
+    background-size: 110px 92.5px;
+    height: 92.5px;
+    width: 110px;
+    margin-top: -92.5px;
+}
+
+.img-jo {
+    position: absolute;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: url(../../assets/image/Journeyman.png) no-repeat;
+    background-size: 110px 92.5px;
+    height: 92.5px;
+    width: 110px;
+    margin-top: -92.5px;
+}
+
+.name {
+    font-size: 8.3px;
+    color: #FFFFFF;
+}
+
+.name-text {
+    max-height: 40px;
+    text-transform: uppercase;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 8.3px;
+    line-height: 130%;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 5px;
+}
+
+.tag {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 6.6px;
+    line-height: 130%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.search {
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    margin-left: 78px;
+    margin-right: 78px;
+    color: #929292;
+}
+
+.search input {
+    height: 37.5px;
+    text-indent: 5%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    border: 1px solid #A3A3A3;
+    border-radius: 8px;
+    color: #929292;
+    background: transparent url(../../assets/image/search.png) no-repeat 16px center;
+    background-size: 16px 16px;
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 1px solid #A3A3A3;
+}
+
+/* Bắt đầu CSS danh sách kiểu IOS */
+.ios-contacts-container {
+    display: flex;
+    font-family: 'Public Sans';
+    font-style: normal;
+    overflow: auto !important;
+    height: 640px;
+    margin-left: 75px;
+    margin-right: 25px;
+}
+
+.ios-contacts {
+    flex: 10;
+}
+
+.ios-contact-letter {
+    width: 12px;
+    height: 19px;
+    color: #5C5C5C;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.ios-contact-name {
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #6C6C6C;
+}
+
+.listname {
+    text-decoration: none;
+    color: #6C6C6C;
+}
+
+.ios-contacts-sidebar {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+}
+
+.ios-contacts-sidebar a {
+    color: #5C5C5C;
+    text-decoration: none;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 6px;
+}
+
+.ios-contacts-sidebar a:hover {
+    color: #1634dc;
+}
+
+/* custom scroll */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 8px;
+}
+
+/* Kết thúc CSS danh sách kiểu IOS */
+
+/* Bắt đầu CSS biểu đồ tròn */
+.title-chart {
+    height: 189px;
+}
+
+.reach {
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.reachforgreat {
+    width: 229px;
+    height: 60.83px;
+}
+
+.divider {
+    width: 200px;
+}
+
+.reach h4 {
+    height: 19px;
+    font-family: 'Public Sans';
+    font-style: italic !important;
+    font-weight: 500;
+    font-size: 10.6px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+
+.chartpie {
+    background-color: #D52B1C;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.button_prev {
+    position: absolute;
+    width: 43.21px;
+    height: 24.36px;
+    left: -50px;
+    top: 50%;
+}
+
+.button_next {
+    position: absolute;
+    width: 43.21px;
+    height: 24.36px;
+    right: -50px;
+    top: 50%;
+}
+
+.btn-empty {
+    display: none;
+}
+
+@media screen and (max-width: 430px) {
+
+    .carousel-item {
+        height: 100%;
+    }
+
+    .carousel {
+        margin-bottom: 0;
+    }
+
+    .countdown {
+        top: 100px;
+        width: 90%;
+        height: 130px;
+    }
+
+    .countdown h1 {
+        font-size: 35px;
+        line-height: 35px;
+        margin-top: 10px;
+    }
+
+    .count-down-timer .wrapper .times p {
+        font-size: 30px;
+        line-height: 99%;
+    }
+
+    .tab {
+        margin-top: 130px;
+    }
+
+    .nav-tabs {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .nav-item {
+        font-size: 12px;
+        width: 87px !important;
+        height: 40px;
+    }
+
+    .tab-sub {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 32px;
+    }
+
+    .nav-sub {
+        padding: 10px;
+        width: auto;
+        height: 35px;
+    }
+
+    .nav-link-sub {
+        font-size: 12px;
+        line-height: 99%;
+    }
+
+    .search input {
+        text-indent: 12%;
+    }
+
+    .danhsach {
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center;
+        position: relative;
+        max-width: 400px;
+        height: 900px;
+    }
+
+    .box {
+        width: 120px;
+        height: 140px;
+    }
+
+    .img-block {
+        width: 110px;
+        height: 140px;
+    }
+
+    .button_prev {
+        left: -30px;
+    }
+
+    .button_next {
+        right: 0px;
+    }
+
+    .nodata-empty {
+        display: block;
+        width: 90%;
+        font-size: 14px;
+        line-height: 100%;
+        margin-bottom: 20px;
+    }
+
+    .reachforgreat {
+        width: 90%;
+        height: 60px;
+    }
+
+    footer {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    footer p {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        padding-top: 10px;
+        padding-bottom: 0px;
+    }
+}

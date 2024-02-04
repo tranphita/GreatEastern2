@@ -1,0 +1,19 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+    <div class="p-2 w-50 bd-highlight">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Thứ tự</span>
+            <input type="number" id="Priority" class="form-control" [(ngModel)]="banner.Priority">
+        </div>
+    </div>
+    <div class="p-2 w-50 bd-highlight">
+        <img width="400px" height="200px" [src]="PhotoFilePath" />
+        <input class="m-2" type="file" (change)="uploadPhoto($event)">
+    </div>
+</div>
+<button type="button" (click)="addBanner()" *ngIf="banner.BannerID == '0'" class="btn btn-primary">
+    Create
+</button>
+
+<button type="button" (click)="updateBanner()" *ngIf="banner.BannerID != '0'" class="btn btn-primary">
+    Update
+</button>

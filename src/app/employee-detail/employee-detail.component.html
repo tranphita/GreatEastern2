@@ -1,0 +1,58 @@
+<div class="container main-page">
+    <div class="header">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button *ngFor="let item of banners; let i=index" [ngClass]="{'active': i == 0}" type="button"
+                    data-bs-target="#myCarousel" attr.data-bs-slide-to="{{i}}">
+                </button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let item of banners; let i=index" [ngClass]="{'active': i == 0}">
+                    <img src="https://api.reachforgreat-winners.com/Photos/Banners/{{item.BannerName}}"
+                        class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="countdown text-center">
+                <h1>Congratulations!</h1>
+            </div>
+        </div>
+        <div class="detail-content">
+            <qrcode class="d-none d-sm-block qrcode" [qrdata]="qrCode" [width]="118" style="border-radius: 13px;"
+                [errorCorrectionLevel]="'M'">
+            </qrcode>
+            <div id="tsparticles">
+                <div [ngClass]="{ 
+                    'img-vo':detail.Title.toUpperCase() == 'VOYAGER',
+                    'img-ad': detail.Title.toUpperCase() == 'ADVENTURER',
+                    'img-ex':detail.Title.toUpperCase() == 'EXPLORER',
+                    'img-jo': detail.Title.toUpperCase() == 'JOURNEYMAN'
+                }"></div>
+                <div class="content text-center name-page" [ngClass]="{ 
+                    'name-page-vo': detail.Title.toUpperCase() == 'VOYAGER',
+                    'name-page-ad': detail.Title.toUpperCase() == 'ADVENTURER',
+                    'name-page-ex': detail.Title.toUpperCase() == 'EXPLORER',
+                    'name-page-jo': detail.Title.toUpperCase() == 'JOURNEYMAN'}">
+                    <div class="name-text">
+                        <span>{{detail.EmployeeName}}</span>
+                    </div>
+                    <div class="tag">{{detail.Tag2}}</div>
+                    <div class="tag">{{detail.Tag}}</div>
+                </div>
+                <div class="title-qr">
+                    <h1>SCAN HERE</h1>
+                    <span>to save this page on your mobile phone</span>
+                </div>
+            </div>
+        </div>
+        <input class="back" type="image" alt="Back" src="../../assets/image/back.png" (click)="back()">
+    </div>
+    <div class="chartpie">
+        <div class="title-chart text-center">
+            <img src="../../assets/image/footer.png" alt="footer">
+        </div>
+    </div>
+</div>

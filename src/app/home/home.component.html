@@ -1,0 +1,376 @@
+<div class="container main-page">
+    <div class="header">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button *ngFor="let item of banners; let i=index" [ngClass]="{'active': i == 0}" type="button"
+                    data-bs-target="#myCarousel" attr.data-bs-slide-to="{{i}}">
+                </button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let item of banners; let i=index" [ngClass]="{'active': i == 0}">
+                    <img src="https://api.reachforgreat-winners.com/Photos/Banners/{{item.BannerName}}"
+                        class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="countdown text-center">
+                <h1>January 24 Qualifiers</h1>
+                <!-- <p class="d-none d-sm-block">Qualification for GELAC Convention 2024 will be based on Achievers Credits
+                    from 1 December 2022 to <br> 30 November 2023 (12 months qualifying period). Credits will be given
+                    to
+                    every dollar of FYC based on the factor table. Please refer to Circular: 002/23/DAE/EVENTS for
+                    further details on calculation of Achievers Credits.</p> -->
+                <p class="d-none d-sm-block">Qualification for GELAC
+                    Convention 2025 will be based on
+                    Achievers Credits from 1
+                    December 2023 to 30 <br> November 2024 (12 months qualifying period). Credits will be given to every
+                    dollar
+                    of FYC based on the factor table.
+                    Please refer to Circular:
+                    001/24/DAE/EVENTS for further
+                    details on calculation of Achievers
+                    Credits.</p>
+                <div class="count-down-timer">
+                    <div class="wrapper">
+                        <div class="times">
+                            <p #days></p>
+                            <p>:</p>
+                            <p #hours></p>
+                            <p>:</p>
+                            <p #minutes></p>
+                            <p>:</p>
+                            <p #seconds></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab">
+            <!-- Tabs navs -->
+            <ul class="nav nav-tabs">
+                <li class="nav-item" [ngClass]="{ 'active':activeTab == 0}">
+                    <a class="nav-link" [routerLink]="['/']" fragment="new" (click)="NewTab(0)">Newest Qualifiers</a>
+                </li>
+                <li class="nav-item" *ngFor="let item of locations"
+                    [ngClass]="{ 'active': activeTab == item.LocationID }">
+                    <a class="nav-link" [routerLink]="['/']"
+                        (click)="onSelected(item.LocationID, item.LocationName, activeTabsub)">
+                        {{item.LocationName}}
+                    </a>
+                </li>
+                <li class="nav-item nav-all" [ngClass]="{ 'active':activeTab==10}">
+                    <a class="nav-link" [routerLink]="['/']" fragment="all" (click)="AllTab(10, activeTabsub)">All</a>
+                </li>
+                <li class="nav-item nav-search" [ngClass]="{ 'active':activeTab==20}">
+                    <a class="nav-link" [routerLink]="['/']" fragment="list" (click)="SearchTab(20)">
+                        <i data-feather="search"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- Tabs navs -->
+            <!-- Tabs content -->
+            <div class="tab-content">
+                <div class="tab-pane fade" id="0" [ngClass]="{'show active':activeTab == 0}">
+                    <div class="tab-sub">
+                        <ul class="nav">
+                            <li class="nav-sub">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="danhsach" [ngClass]="{ 'empty': this.empty == true}">
+                        <div class="row">
+                            <div class="col-3 box" *ngFor="let emp of employees; let i = index">
+                                <div *ngIf="i < 16" class="img-block" routerLink="/employee-detail/{{emp.EmployeeID}}">
+                                    <div class="badge"
+                                        [ngClass]="{ 'badge-active': (emp.Badge != '' &&  emp.Badge != null) }">
+                                        <img *ngIf="emp.Badge != '' &&  emp.Badge != null"
+                                            src="https://api.reachforgreat-winners.com/Photos/Badges/{{emp.Badge}}"
+                                            alt="badge">
+                                    </div>
+                                    <img src="https://api.reachforgreat-winners.com/Photos/{{emp.Image}}"
+                                        class="img-name" alt="image">
+                                    <div [ngClass]="{ 
+                                    'img-vo':emp.Title.toUpperCase() == 'VOYAGER',
+                                    'img-ad': emp.Title.toUpperCase() == 'ADVENTURER',
+                                    'img-ex':emp.Title.toUpperCase() == 'EXPLORER',
+                                    'img-jo': emp.Title.toUpperCase() == 'JOURNEYMAN'
+                                }"></div>
+                                    <div class="content text-center name-page" [ngClass]="{ 
+                                        'name-page-vo':emp.Title.toUpperCase() == 'VOYAGER',
+                                        'name-page-ad': emp.Title.toUpperCase() == 'ADVENTURER',
+                                        'name-page-ex': emp.Title.toUpperCase() == 'EXPLORER',
+                                        'name-page-jo': emp.Title.toUpperCase() == 'JOURNEYMAN'}">
+                                        <div class="name-text">
+                                            <a class="name" routerLink="/employee-detail/{{emp.EmployeeID}}">
+                                                <span>{{emp.EmployeeName}}</span>
+                                            </a>
+                                        </div>
+                                        <div class="tag">{{emp.Tag2}}</div>
+                                        <div class="tag">{{emp.Tag}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button_prev" [ngClass]="{ 'btn-empty': this.empty == true || this.total < 16}"
+                            (click)="clickPrev()">
+                            <svg width="25" height="44" viewBox="0 0 25 44" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_48_5393)">
+                                    <path
+                                        d="M22.3086 0.000953674C22.575 -0.00427628 22.8399 0.0420532 23.0876 0.137234C23.3354 0.232414 23.5611 0.374538 23.7516 0.555298C23.9434 0.738754 24.0957 0.957348 24.1997 1.19838C24.3036 1.4394 24.3571 1.69806 24.3571 1.95932C24.3571 2.22059 24.3036 2.47925 24.1997 2.72028C24.0957 2.9613 23.9434 3.1799 23.7516 3.36336L4.94551 21.6294L23.7516 39.8681C24.1136 40.245 24.3109 40.7433 24.3019 41.2583C24.2929 41.7733 24.0784 42.2649 23.7035 42.6297C23.3285 42.9945 22.8224 43.2041 22.2914 43.2144C21.7604 43.2248 21.246 43.0351 20.8562 42.6853L0.59771 23.0379C0.214908 22.665 0 22.1602 0 21.6339C0 21.1077 0.214908 20.6028 0.59771 20.2299L20.8562 0.555298C21.2456 0.191349 21.7679 -0.00799942 22.3086 0.000953674Z"
+                                        fill="#D52B1C" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_48_5393">
+                                        <rect width="43.2143" height="24.3571" fill="white"
+                                            transform="matrix(0 -1 1 0 0 43.2139)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="button_next"
+                            [ngClass]="{ 'btn-empty': this.empty == true || (this.employees && this.employees.length < 16)}"
+                            (click)="clickNext()">
+                            <svg width="25" height="44" viewBox="0 0 25 44" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_361_9348)">
+                                    <path
+                                        d="M2.04859 0.78611C1.78214 0.78088 1.5173 0.827209 1.26953 0.92239C1.02176 1.01757 0.796045 1.15969 0.605566 1.34045C0.413767 1.52391 0.261465 1.7425 0.157515 1.98353C0.0535622 2.22456 3.43323e-05 2.48322 3.43323e-05 2.74448C3.43323e-05 3.00574 0.0535622 3.2644 0.157515 3.50543C0.261465 3.74646 0.413767 3.96505 0.605566 4.14851L19.4117 22.4145L0.605566 40.6533C0.243563 41.0301 0.0463161 41.5285 0.0552921 42.0435C0.0642681 42.5585 0.278767 43.05 0.653698 43.4148C1.02863 43.7796 1.53479 43.9892 2.06577 43.9996C2.59676 44.01 3.11121 43.8203 3.50098 43.4704L23.7595 23.8231C24.1423 23.4501 24.3572 22.9453 24.3572 22.4191C24.3572 21.8928 24.1423 21.388 23.7595 21.015L3.50098 1.34045C3.11159 0.976505 2.58929 0.777157 2.04859 0.78611Z"
+                                        fill="#D52B1C" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_361_9348">
+                                        <rect width="43.2143" height="24.3571" fill="white"
+                                            transform="matrix(0 -1 -1 0 24.3572 44)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" *ngFor="let item of listdiadiem" id="{{item.LocationID}}"
+                    [ngClass]="{'show active':activeTab == item.LocationID}">
+                    <div class="tab-sub">
+                        <ul class="nav">
+                            <li class="nav-sub" *ngFor="let item1 of item.Title"
+                                [ngClass]="{ 'active':activeTabsub==item1.Name}">
+                                <a class="nav-link-sub" [routerLink]="['/']"
+                                    [ngClass]="{ 'active':activeTabsub==item1.Name}"
+                                    (click)="clickTitle(item.LocationName, item1.Name)">{{item1.Name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="danhsach" [ngClass]="{ 'empty': this.empty == true}">
+                        <div class="row">
+                            <div class="col-3 box" *ngFor="let emp of employees; let i = index">
+                                <div *ngIf="i < 16" class="img-block" routerLink="/employee-detail/{{emp.EmployeeID}}">
+                                    <div class="badge"
+                                        [ngClass]="{ 'badge-active': (emp.Badge != '' &&  emp.Badge != null) }">
+                                        <img *ngIf="emp.Badge != '' &&  emp.Badge != null"
+                                            src="https://api.reachforgreat-winners.com/Photos/Badges/{{emp.Badge}}"
+                                            alt="badge">
+                                    </div>
+                                    <img src="https://api.reachforgreat-winners.com/Photos/{{emp.Image}}"
+                                        class="img-name" alt="image">
+                                    <div [ngClass]="{ 
+                                    'img-vo':emp.Title.toUpperCase() == 'VOYAGER',
+                                    'img-ad': emp.Title.toUpperCase() == 'ADVENTURER',
+                                    'img-ex':emp.Title.toUpperCase() == 'EXPLORER',
+                                    'img-jo': emp.Title.toUpperCase() == 'JOURNEYMAN'
+                                }"></div>
+                                    <div class="content text-center name-page" [ngClass]="{ 
+                                        'name-page-vo':emp.Title.toUpperCase() == 'VOYAGER',
+                                        'name-page-ad': emp.Title.toUpperCase() == 'ADVENTURER',
+                                        'name-page-ex': emp.Title.toUpperCase() == 'EXPLORER',
+                                        'name-page-jo': emp.Title.toUpperCase() == 'JOURNEYMAN'}">
+                                        <div class="name-text">
+                                            <a class="name" routerLink="/employee-detail/{{emp.EmployeeID}}">
+                                                <span>{{emp.EmployeeName}}</span>
+                                            </a>
+                                        </div>
+                                        <div class="tag">{{emp.Tag2}}</div>
+                                        <div class="tag">{{emp.Tag}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button_prev" [ngClass]="{ 'btn-empty': this.empty == true || this.total < 16}"
+                            (click)="clickPrev()">
+                            <svg width="25" height="44" viewBox="0 0 25 44" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_48_5393)">
+                                    <path
+                                        d="M22.3086 0.000953674C22.575 -0.00427628 22.8399 0.0420532 23.0876 0.137234C23.3354 0.232414 23.5611 0.374538 23.7516 0.555298C23.9434 0.738754 24.0957 0.957348 24.1997 1.19838C24.3036 1.4394 24.3571 1.69806 24.3571 1.95932C24.3571 2.22059 24.3036 2.47925 24.1997 2.72028C24.0957 2.9613 23.9434 3.1799 23.7516 3.36336L4.94551 21.6294L23.7516 39.8681C24.1136 40.245 24.3109 40.7433 24.3019 41.2583C24.2929 41.7733 24.0784 42.2649 23.7035 42.6297C23.3285 42.9945 22.8224 43.2041 22.2914 43.2144C21.7604 43.2248 21.246 43.0351 20.8562 42.6853L0.59771 23.0379C0.214908 22.665 0 22.1602 0 21.6339C0 21.1077 0.214908 20.6028 0.59771 20.2299L20.8562 0.555298C21.2456 0.191349 21.7679 -0.00799942 22.3086 0.000953674Z"
+                                        fill="#D52B1C" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_48_5393">
+                                        <rect width="43.2143" height="24.3571" fill="white"
+                                            transform="matrix(0 -1 1 0 0 43.2139)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="button_next"
+                            [ngClass]="{ 'btn-empty': this.empty == true || (this.employees && this.employees.length < 16)}"
+                            (click)="clickNext()">
+                            <svg width="25" height="44" viewBox="0 0 25 44" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_361_9348)">
+                                    <path
+                                        d="M2.04859 0.78611C1.78214 0.78088 1.5173 0.827209 1.26953 0.92239C1.02176 1.01757 0.796045 1.15969 0.605566 1.34045C0.413767 1.52391 0.261465 1.7425 0.157515 1.98353C0.0535622 2.22456 3.43323e-05 2.48322 3.43323e-05 2.74448C3.43323e-05 3.00574 0.0535622 3.2644 0.157515 3.50543C0.261465 3.74646 0.413767 3.96505 0.605566 4.14851L19.4117 22.4145L0.605566 40.6533C0.243563 41.0301 0.0463161 41.5285 0.0552921 42.0435C0.0642681 42.5585 0.278767 43.05 0.653698 43.4148C1.02863 43.7796 1.53479 43.9892 2.06577 43.9996C2.59676 44.01 3.11121 43.8203 3.50098 43.4704L23.7595 23.8231C24.1423 23.4501 24.3572 22.9453 24.3572 22.4191C24.3572 21.8928 24.1423 21.388 23.7595 21.015L3.50098 1.34045C3.11159 0.976505 2.58929 0.777157 2.04859 0.78611Z"
+                                        fill="#D52B1C" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_361_9348">
+                                        <rect width="43.2143" height="24.3571" fill="white"
+                                            transform="matrix(0 -1 -1 0 24.3572 44)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="10" [ngClass]="{'show active':activeTab == 10}">
+                    <div class="tab-sub">
+                        <ul class="nav">
+                            <li class="nav-sub" *ngFor="let item of tiles"
+                                [ngClass]="{ 'active':activeTabsub==item.Name}">
+                                <a class="nav-link-sub" [routerLink]="['/']"
+                                    [ngClass]="{ 'active':activeTabsub==item.Name}"
+                                    (click)="clickTitleAll(item.Name)">{{item.Name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="danhsach" [ngClass]="{ 'empty': this.empty == true}">
+                        <div class="row">
+                            <div class="col-3 box" *ngFor="let emp of employees; let i = index">
+                                <div *ngIf="i < 16" class="img-block" routerLink="/employee-detail/{{emp.EmployeeID}}">
+                                    <div class="badge"
+                                        [ngClass]="{ 'badge-active': (emp.Badge != '' &&  emp.Badge != null) }">
+                                        <img *ngIf="emp.Badge != '' &&  emp.Badge != null"
+                                            src="https://api.reachforgreat-winners.com/Photos/Badges/{{emp.Badge}}"
+                                            alt="badge">
+                                    </div>
+                                    <img src="https://api.reachforgreat-winners.com/Photos/{{emp.Image}}"
+                                        class="img-name" alt="image">
+                                    <div [ngClass]="{ 
+                                    'img-vo':emp.Title.toUpperCase() == 'VOYAGER',
+                                    'img-ad': emp.Title.toUpperCase() == 'ADVENTURER',
+                                    'img-ex':emp.Title.toUpperCase() == 'EXPLORER',
+                                    'img-jo': emp.Title.toUpperCase() == 'JOURNEYMAN'
+                                }"></div>
+                                    <div class="content text-center name-page" [ngClass]="{ 
+                                        'name-page-vo':emp.Title.toUpperCase() == 'VOYAGER',
+                                        'name-page-ad': emp.Title.toUpperCase() == 'ADVENTURER',
+                                        'name-page-ex': emp.Title.toUpperCase() == 'EXPLORER',
+                                        'name-page-jo': emp.Title.toUpperCase() == 'JOURNEYMAN'}">
+                                        <div class="name-text">
+                                            <a class="name" routerLink="/employee-detail/{{emp.EmployeeID}}">
+                                                <span>{{emp.EmployeeName}}</span>
+                                            </a>
+                                        </div>
+                                        <div class="tag">{{emp.Tag2}}</div>
+                                        <div class="tag">{{emp.Tag}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button_prev" [ngClass]="{ 'btn-empty': this.empty == true || this.total < 16}"
+                            (click)="clickPrev()">
+                            <svg width="25" height="44" viewBox="0 0 25 44" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_48_5393)">
+                                    <path
+                                        d="M22.3086 0.000953674C22.575 -0.00427628 22.8399 0.0420532 23.0876 0.137234C23.3354 0.232414 23.5611 0.374538 23.7516 0.555298C23.9434 0.738754 24.0957 0.957348 24.1997 1.19838C24.3036 1.4394 24.3571 1.69806 24.3571 1.95932C24.3571 2.22059 24.3036 2.47925 24.1997 2.72028C24.0957 2.9613 23.9434 3.1799 23.7516 3.36336L4.94551 21.6294L23.7516 39.8681C24.1136 40.245 24.3109 40.7433 24.3019 41.2583C24.2929 41.7733 24.0784 42.2649 23.7035 42.6297C23.3285 42.9945 22.8224 43.2041 22.2914 43.2144C21.7604 43.2248 21.246 43.0351 20.8562 42.6853L0.59771 23.0379C0.214908 22.665 0 22.1602 0 21.6339C0 21.1077 0.214908 20.6028 0.59771 20.2299L20.8562 0.555298C21.2456 0.191349 21.7679 -0.00799942 22.3086 0.000953674Z"
+                                        fill="#D52B1C" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_48_5393">
+                                        <rect width="43.2143" height="24.3571" fill="white"
+                                            transform="matrix(0 -1 1 0 0 43.2139)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="button_next"
+                            [ngClass]="{ 'btn-empty': this.empty == true || (this.employees && this.employees.length < 16)}"
+                            (click)="clickNext()">
+                            <svg width="25" height="44" viewBox="0 0 25 44" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_361_9348)">
+                                    <path
+                                        d="M2.04859 0.78611C1.78214 0.78088 1.5173 0.827209 1.26953 0.92239C1.02176 1.01757 0.796045 1.15969 0.605566 1.34045C0.413767 1.52391 0.261465 1.7425 0.157515 1.98353C0.0535622 2.22456 3.43323e-05 2.48322 3.43323e-05 2.74448C3.43323e-05 3.00574 0.0535622 3.2644 0.157515 3.50543C0.261465 3.74646 0.413767 3.96505 0.605566 4.14851L19.4117 22.4145L0.605566 40.6533C0.243563 41.0301 0.0463161 41.5285 0.0552921 42.0435C0.0642681 42.5585 0.278767 43.05 0.653698 43.4148C1.02863 43.7796 1.53479 43.9892 2.06577 43.9996C2.59676 44.01 3.11121 43.8203 3.50098 43.4704L23.7595 23.8231C24.1423 23.4501 24.3572 22.9453 24.3572 22.4191C24.3572 21.8928 24.1423 21.388 23.7595 21.015L3.50098 1.34045C3.11159 0.976505 2.58929 0.777157 2.04859 0.78611Z"
+                                        fill="#D52B1C" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_361_9348">
+                                        <rect width="43.2143" height="24.3571" fill="white"
+                                            transform="matrix(0 -1 -1 0 24.3572 44)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="20" [ngClass]="{ 'show active':activeTab === 20}">
+                    <div class="search">
+                        <input type="text" (keyup)="onKey($event)" class="form-control use-keyboard-input"
+                            placeholder="Type to search">
+                    </div>
+                    <div class="ios-contacts-container">
+                        <div class="ios-contacts">
+                            <div class="ios-contact-section" *ngFor="let mani of listnhanvien">
+                                <div class="ios-contact-letter" id="{{mani?.alphabet}}">{{mani?.alphabet}}</div>
+                                <div class="ios-contact-letter-container">
+                                    <div class="ios-contact-name" *ngFor="let group of mani.record">
+                                        <a class="listname" routerLink="/employee-detail/{{group.EmployeeID}}">
+                                            {{group?.EmployeeName}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ios-contacts-sidebar">
+                            <a [routerLink]="['/']" fragment="A" (click)="clickAZ('A')">A</a>
+                            <a [routerLink]="['/']" fragment="B" (click)="clickAZ('B')">B</a>
+                            <a [routerLink]="['/']" fragment="C" (click)="clickAZ('C')">C</a>
+                            <a [routerLink]="['/']" fragment="D" (click)="clickAZ('D')">D</a>
+                            <a [routerLink]="['/']" fragment="E" (click)="clickAZ('E')">E</a>
+                            <a [routerLink]="['/']" fragment="F" (click)="clickAZ('F')">F</a>
+                            <a [routerLink]="['/']" fragment="G" (click)="clickAZ('G')">G</a>
+                            <a [routerLink]="['/']" fragment="H" (click)="clickAZ('H')">H</a>
+                            <a [routerLink]="['/']" fragment="I" (click)="clickAZ('I')">I</a>
+                            <a [routerLink]="['/']" fragment="J" (click)="clickAZ('J')">J</a>
+                            <a [routerLink]="['/']" fragment="k" (click)="clickAZ('K')">K</a>
+                            <a [routerLink]="['/']" fragment="L" (click)="clickAZ('L')">L</a>
+                            <a [routerLink]="['/']" fragment="M" (click)="clickAZ('M')">M</a>
+                            <a [routerLink]="['/']" fragment="N" (click)="clickAZ('N')">N</a>
+                            <a [routerLink]="['/']" fragment="O" (click)="clickAZ('O')">O</a>
+                            <a [routerLink]="['/']" fragment="P" (click)="clickAZ('P')">P</a>
+                            <a [routerLink]="['/']" fragment="Q" (click)="clickAZ('Q')">Q</a>
+                            <a [routerLink]="['/']" fragment="R" (click)="clickAZ('R')">R</a>
+                            <a [routerLink]="['/']" fragment="S" (click)="clickAZ('S')">S</a>
+                            <a [routerLink]="['/']" fragment="T" (click)="clickAZ('T')">T</a>
+                            <a [routerLink]="['/']" fragment="U" (click)="clickAZ('U')">U</a>
+                            <a [routerLink]="['/']" fragment="V" (click)="clickAZ('V')">V</a>
+                            <a [routerLink]="['/']" fragment="W" (click)="clickAZ('W')">W</a>
+                            <a [routerLink]="['/']" fragment="X" (click)="clickAZ('X')">X</a>
+                            <a [routerLink]="['/']" fragment="Y" (click)="clickAZ('Y')">Y</a>
+                            <a [routerLink]="['/']" fragment="Z" (click)="clickAZ('Z')">Z</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tabs content -->
+        </div>
+    </div>
+    <div class="chartpie">
+        <div class="title-chart text-center">
+            <img src="../../assets/image/footer.png" alt="footer">
+        </div>
+    </div>
+</div>

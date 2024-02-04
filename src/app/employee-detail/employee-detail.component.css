@@ -1,0 +1,450 @@
+footer {
+    background-color: #FDF6EF;
+    padding: 30px;
+    max-width: 720px;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.main-page {
+    background: url('../../assets/image/bg_d_n.png') no-repeat;
+    background-size: 720px 1280px;
+}
+
+.detail-content {
+    position: relative;
+    height: 670px;
+    margin-top: 113.5px;
+}
+
+.qrcode {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 497px;
+}
+
+.title-qr {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 633px;
+}
+
+.title-qr h1 {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18.4009px;
+    line-height: 130%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.title-qr span {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+}
+
+#tsparticles {
+    width: 720px;
+    height: 670px;
+}
+
+.img-vo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: url(../../assets/image/voyager_detail.png) no-repeat;
+    background-size: 402.16px 333px;
+    height: 333px;
+    width: 402.16px;
+    margin: auto;
+}
+
+.img-ad {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: url(../../assets/image/adventure_detail.png) no-repeat;
+    background-size: 402.16px 333px;
+    height: 333px;
+    width: 402.16px;
+    margin: auto;
+}
+
+.img-ex {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: url(../../assets/image/explorer_detail.png) no-repeat;
+    background-size: 402.16px 333px;
+    height: 333px;
+    width: 402.16px;
+    margin: auto;
+}
+
+.img-jo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: url(../../assets/image/journeyman_detail.png) no-repeat;
+    background-size: 402.16px 333px;
+    height: 333px;
+    width: 402.16px;
+    margin: auto;
+}
+
+.name-page {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 25px;
+    height: 110px;
+    width: 264px;
+    padding: 14px;
+    margin-top: 362px;
+}
+
+.name-page-vo {
+    background-color: #DD921B;
+}
+
+.name-page-ad {
+    background-color: #6F95B5;
+}
+
+.name-page-ex {
+    background-color: #AA6729;
+}
+
+.name-page-jo {
+    background-color: #6E808E;
+}
+
+.name {
+    font-size: 8.3px;
+    color: #FFFFFF;
+}
+
+.name-text {
+    max-height: 40px;
+    text-transform: uppercase;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.tag {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.back {
+    width: 115px;
+    height: 37px;
+    margin-top: 25px;
+    margin-left: 28px;
+    margin-bottom: 15px;
+}
+
+.countdown {
+    position: absolute;
+    width: 562.5px;
+    height: 126px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 188px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.countdown h1 {
+    font-family: 'Mr Banks';
+    font-style: normal;
+    color: #D52B1C;
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 67px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.title-chart {
+    height: 189px;
+}
+
+.reach {
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.reachforgreat {
+    width: 229px;
+    height: 60.83px;
+}
+
+.divider {
+    width: 200px;
+}
+
+.reach h4 {
+    height: 19px;
+    font-family: 'Public Sans';
+    font-style: italic !important;
+    font-weight: 500;
+    font-size: 10.6px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+
+.chartpie {
+    background-color: #D52B1C;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+@media screen and (max-width: 430px) {
+    .count-down-timer {
+        margin: 20px;
+    }
+
+    .carousel-item {
+        height: 100%;
+    }
+
+    .carousel {
+        margin-bottom: 0;
+    }
+
+    .countdown {
+        top: 100px;
+        width: 90%;
+        height: 100px;
+    }
+
+    .countdown h1 {
+        font-size: 40px;
+        line-height: 40px;
+        margin-top: 25px;
+    }
+
+    .detail-content {
+        height: 560px;
+        margin-top: 110px;
+    }
+
+    .name-page {
+        height: 105px;
+    }
+
+    .name-text {
+        max-height: 40px;
+        font-size: 16px;
+    }
+
+    #tsparticles {
+        width: 100%;
+        height: 90%;
+    }
+
+    .reachforgreat {
+        width: 229px;
+        height: 60px;
+    }
+
+    .back {
+        display: none;
+    }
+
+    footer {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: 130px;
+    }
+
+    footer p {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 5px;
+        padding-bottom: 0px;
+    }
+
+    .title-qr {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .countdown h1 {
+        font-size: 35px;
+        line-height: 35px;
+        margin-top: 25px;
+    }
+
+    .detail-content {
+        height: 560px;
+        margin-top: 110px;
+    }
+
+    .name-page {
+        height: 105px;
+    }
+
+    .name-text {
+        max-height: 40px;
+        font-size: 16px;
+    }
+
+    .img-vo {
+        background-size: 365px 306px;
+        height: 306px;
+        width: 365px;
+        margin: auto;
+    }
+    
+    .img-ad {
+        background-size: 365px 306px;
+        height: 306px;
+        width: 365px;
+        margin: auto;
+    }
+    
+    .img-ex {
+        background-size: 365px 306px;
+        height: 306px;
+        width: 365px;
+        margin: auto;
+    }
+    
+    .img-jo {
+        background-size: 365px 306px;
+        height: 306px;
+        width: 365px;
+        margin: auto;
+    }
+
+    #tsparticles {
+        width: 100%;
+        height: 90%;
+    }
+
+    .reachforgreat {
+        width: 229px;
+        height: 60px;
+    }
+
+    .back {
+        display: none;
+    }
+
+    footer {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: 100px;
+    }
+}
+
+
+@media screen and (max-width: 280px) {
+    .countdown {
+        top: 80px;
+        width: 90%;
+        height: 100px;
+    }
+
+    .countdown h1 {
+        font-size: 30px;
+        line-height: 30px;
+        margin-top: 25px;
+    }
+
+    .detail-content {
+        height: 560px;
+        margin-top: 110px;
+    }
+
+    .name-page {
+        height: 105px;
+    }
+
+    .name-text {
+        max-height: 40px;
+        font-size: 16px;
+    }
+
+    .img-vo {
+        background-size: 280px 234px;
+        height: 234px;
+        width: 280px;
+        margin: auto;
+    }
+    
+    .img-ad {
+        background-size: 280px 234px;
+        height: 234px;
+        width: 280px;
+        margin: auto;
+    }
+    
+    .img-ex {
+        background-size: 280px 234px;
+        height: 234px;
+        width: 280px;
+        margin: auto;
+    }
+    
+    .img-jo {
+        background-size: 280px 234px;
+        height: 234px;
+        width: 280px;
+        margin: auto;
+    }
+
+    #tsparticles {
+        width: 100%;
+        height: 90%;
+    }
+
+    .reachforgreat {
+        width: 229px;
+        height: 60px;
+    }
+
+    .back {
+        display: none;
+    }
+
+    footer {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: 100px;
+    }
+}
