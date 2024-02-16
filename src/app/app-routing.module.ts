@@ -9,10 +9,13 @@ import { AuthGuard } from './guard/guard.component';
 import { HomeComponent } from './home/home.component';
 import { LocationComponent } from './location/location.component';
 import { LoginComponent } from './login/login.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { ListGalleryComponent } from './list-gallery/list-gallery.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'employee-detail/:EmployeeID', component: EmployeeDetailComponent },
+  { path: 'gallery', component: ListGalleryComponent },
   {
     path: 'admin',
     component: DashboardComponent,
@@ -22,6 +25,7 @@ const routes: Routes = [
       { path: 'employee', component: EmployeeComponent },
       { path: 'location', component: LocationComponent },
       { path: 'banner', component: BannerComponent },
+      { path: 'gallery', component: GalleryComponent },
     ],
   },
   { path: 'login', component: LoginComponent },

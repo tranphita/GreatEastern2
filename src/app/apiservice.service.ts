@@ -6,10 +6,15 @@ import { Observable, Subject, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiserviceService {
-  readonly apiUrl = 'https://api.reachforgreat-winners.com/api/';
-  readonly photoUrl = 'https://api.reachforgreat-winners.com/Photos/';
-  readonly photoDetailUrl = 'https://api.reachforgreat-winners.com/Photos/Details/';
-  readonly photoBadgelUrl = 'https://api.reachforgreat-winners.com/Photos/Badges/';
+  // readonly apiUrl = 'https://api.reachforgreat-winners.com/api/';
+  // readonly photoUrl = 'https://api.reachforgreat-winners.com/Photos/';
+  // readonly photoDetailUrl = 'https://api.reachforgreat-winners.com/Photos/Details/';
+  // readonly photoBadgelUrl = 'https://api.reachforgreat-winners.com/Photos/Badges/';
+
+  readonly apiUrl = 'https://localhost:7233/api/';
+  readonly photoUrl = 'https://localhost:7233/Photos/';
+  readonly photoDetailUrl = 'https://localhost:7233/Photos/Details/';
+  readonly photoBadgelUrl = 'https://localhost:7233/Photos/Badges/';
 
   private refreshrequired = new Subject<any>();
 
@@ -157,6 +162,45 @@ export class ApiserviceService {
 
   uploadPhotoBanner(photo: any) {
     return this.http.post(this.apiUrl + 'Banner/SaveFile', photo);
+  }
+
+
+   // Gallery
+   getGalleryList(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl + 'Gallery/GetGallery');
+  }
+
+  getGalleryByID(ID: number): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl + 'Gallery/GetGalleryByID/' + ID);
+  }
+
+  addGallery(emp: any): Observable<any> {
+    return this.http.post<any>(
+      this.apiUrl + 'Gallery/AddGallery',
+      emp
+    );
+  }
+
+  updateGallery(emp: any): Observable<any> {
+    return this.http.put<any>(
+      this.apiUrl + 'Gallery/UpdateGallery',
+      emp
+    );
+  }
+
+  deleteGallery(empId: number): Observable<number> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    };
+
+    return this.http.delete<number>(
+      this.apiUrl + 'Gallery/DeleteGallery/' + empId,
+      httpOptions
+    );
+  }
+
+  uploadPhotoGallery(photo: any) {
+    return this.http.post(this.apiUrl + 'Gallery/SaveFile', photo);
   }
 
 }

@@ -19,6 +19,9 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { BannerComponent } from './banner/banner.component';
 import { AddEditBannerComponent } from './add-edit-banner/add-edit-banner.component';
 import { QRCodeModule } from 'angularx-qrcode';
+import { GalleryComponent } from './gallery/gallery.component';
+import { AddEditGalleryComponent } from './add-edit-gallery/add-edit-gallery.component';
+import { ListGalleryComponent } from './list-gallery/list-gallery.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { QRCodeModule } from 'angularx-qrcode';
     EmployeeDetailComponent,
     BannerComponent,
     AddEditBannerComponent,
+    GalleryComponent,
+    AddEditGalleryComponent,
+    ListGalleryComponent,
   ],
   imports: [
     BrowserModule,

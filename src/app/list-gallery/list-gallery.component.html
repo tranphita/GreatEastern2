@@ -1,0 +1,147 @@
+<div class="container main-page">
+    <div class="header">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button *ngFor="let item of banners; let i=index" [ngClass]="{'active': i == 0}" type="button"
+                    data-bs-target="#myCarousel" attr.data-bs-slide-to="{{i}}">
+                </button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let item of banners; let i=index" [ngClass]="{'active': i == 0}">
+                    <img src="https://api.reachforgreat-winners.com/Photos/Banners/{{item.BannerName}}"
+                        class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="countdown text-center">
+                <h1>January 24 Qualifiers</h1>
+                <!-- <p class="d-none d-sm-block">Qualification for GELAC Convention 2024 will be based on Achievers Credits
+                    from 1 December 2022 to <br> 30 November 2023 (12 months qualifying period). Credits will be given
+                    to
+                    every dollar of FYC based on the factor table. Please refer to Circular: 002/23/DAE/EVENTS for
+                    further details on calculation of Achievers Credits.</p> -->
+                <p class="d-none d-sm-block">Qualification for GELAC
+                    Convention 2025 will be based on
+                    Achievers Credits from 1
+                    December 2023 to 30 <br> November 2024 (12 months qualifying period). Credits will be given to every
+                    dollar
+                    of FYC based on the factor table.
+                    Please refer to Circular:
+                    001/24/DAE/EVENTS for further
+                    details on calculation of Achievers
+                    Credits.</p>
+                <div class="count-down-timer">
+                    <div class="wrapper">
+                        <div class="times">
+                            <p #days></p>
+                            <p>:</p>
+                            <p #hours></p>
+                            <p>:</p>
+                            <p #minutes></p>
+                            <p>:</p>
+                            <p #seconds></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <h1 class="title_photo">Photos Gallery</h1>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb" *ngFor="let item of gallerys; let i=index">
+                    <a href="https://localhost:7233/Photos/Gallerys/{{item.Name}}" class="fancybox"
+                        rel="ligthbox">
+                        <img src="https://localhost:7233/Photos/Gallerys/{{item.Name}}"
+                            class="zoom img-fluid">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="https://images.pexels.com/photos/38238/maldives-ile-beach-sun-38238.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                        class="fancybox" rel="ligthbox">
+                        <img src="https://images.pexels.com/photos/38238/maldives-ile-beach-sun-38238.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                            class="zoom img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        class="fancybox" rel="ligthbox">
+                        <img src="https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            class="zoom img-fluid " alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="https://images.pexels.com/photos/302804/pexels-photo-302804.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        class="fancybox" rel="ligthbox">
+                        <img src="https://images.pexels.com/photos/302804/pexels-photo-302804.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            class="zoom img-fluid " alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="https://images.pexels.com/photos/1038914/pexels-photo-1038914.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                        class="fancybox" rel="ligthbox">
+                        <img src="https://images.pexels.com/photos/1038914/pexels-photo-1038914.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                            class="zoom img-fluid " alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                        class="fancybox" rel="ligthbox">
+                        <img src="https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                            class="zoom img-fluid " alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="https://images.pexels.com/photos/56005/fiji-beach-sand-palm-trees-56005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        class="fancybox" rel="ligthbox">
+                        <img src="https://images.pexels.com/photos/56005/fiji-beach-sand-palm-trees-56005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            class="zoom img-fluid " alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="https://images.pexels.com/photos/1038002/pexels-photo-1038002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        class="fancybox" rel="ligthbox">
+                        <img src="https://images.pexels.com/photos/1038002/pexels-photo-1038002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            class="zoom img-fluid " alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="https://images.pexels.com/photos/1038914/pexels-photo-1038914.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                        class="fancybox" rel="ligthbox">
+                        <img src="https://images.pexels.com/photos/1038914/pexels-photo-1038914.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                            class="zoom img-fluid " alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                        class="fancybox" rel="ligthbox">
+                        <img src="https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                            class="zoom img-fluid " alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="https://images.pexels.com/photos/56005/fiji-beach-sand-palm-trees-56005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        class="fancybox" rel="ligthbox">
+                        <img src="https://images.pexels.com/photos/56005/fiji-beach-sand-palm-trees-56005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            class="zoom img-fluid " alt="">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="https://images.pexels.com/photos/1038002/pexels-photo-1038002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        class="fancybox" rel="ligthbox">
+                        <img src="https://images.pexels.com/photos/1038002/pexels-photo-1038002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            class="zoom img-fluid " alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chartpie">
+        <div class="title-chart text-center">
+            <img class="img-footer" src="../../assets/image/footer.png" alt="footer">
+        </div>
+    </div>
+</div>
