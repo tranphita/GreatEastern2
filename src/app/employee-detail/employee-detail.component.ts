@@ -90,7 +90,7 @@ export class EmployeeDetailComponent implements OnInit {
             gravity: {
               enable: true,
             },
-            speed: { min: 7, max: 30 },
+            speed: { min: 4, max: 20 },
             decay: 0.01,
           },
           number: {
@@ -101,7 +101,101 @@ export class EmployeeDetailComponent implements OnInit {
             value: 1,
           },
           shape: {
-            type: ['circle', 'square', 'triangle', 'star', 'edge'],
+            type: ['image'],
+            "options": {
+              "image": [
+                {
+                  "src": "../../assets/image/confetti/1-01.png",
+                  "width": 22,
+                  "height": 22,
+                  "particles": {
+                    "size": {
+                      "value": 10
+                    }
+                  }
+                },
+                {
+                  "src": "../../assets/image/confetti/1-02.png",
+                  "width": 22,
+                  "height": 22,
+                  "particles": {
+                    "size": {
+                      "value": 8
+                    }
+                  }
+                },
+                {
+                  "src": "../../assets/image/confetti/1-03.png",
+                  "width": 22,
+                  "height": 22,
+                  "particles": {
+                    "size": {
+                      "value": 10
+                    }
+                  }
+                },
+                {
+                  "src": "../../assets/image/confetti/1-47.png",
+                  "width": 22,
+                  "height": 22,
+                  "particles": {
+                    "size": {
+                      "value": 7
+                    }
+                  }
+                },
+                {
+                  "src": "../../assets/image/confetti/1-05.png",
+                  "width": 22,
+                  "height": 22,
+                  "particles": {
+                    "size": {
+                      "value": 8
+                    }
+                  }
+                },
+                {
+                  "src": "../../assets/image/confetti/1-06.png",
+                  "width": 22,
+                  "height": 22,
+                  "particles": {
+                    "size": {
+                      "value": 5
+                    }
+                  }
+                },
+                {
+                  "src": "../../assets/image/confetti/1-07.png",
+                  "width": 22,
+                  "height": 22,
+                  "particles": {
+                    "size": {
+                      "value": 6
+                    }
+                  }
+                },
+                {
+                  "src": "../../assets/image/confetti/1-08.png",
+                  "width": 22,
+                  "height": 22,
+                  "particles": {
+                    "size": {
+                      "value": 5
+                    }
+                  }
+                },
+                {
+                  "src": "../../assets/image/confetti/1-19.png",
+                  "width": 22,
+                  "height": 22,
+                  "particles": {
+                    "size": {
+                      "value": 9
+                    }
+                  }
+                },
+              ]
+            }
           },
           size: {
             value: { min: 3, max: 5 },
@@ -109,7 +203,7 @@ export class EmployeeDetailComponent implements OnInit {
               count: 1,
               startValue: 'min',
               enable: true,
-              speed: 6,
+              speed: 3,
               sync: true,
             },
           },
@@ -121,7 +215,7 @@ export class EmployeeDetailComponent implements OnInit {
             direction: 'random',
             animation: {
               enable: true,
-              speed: 60,
+              speed: 30,
             },
           },
           tilt: {
@@ -133,7 +227,7 @@ export class EmployeeDetailComponent implements OnInit {
             },
             animation: {
               enable: true,
-              speed: 60,
+              speed: 30,
             },
           },
           roll: {
@@ -143,8 +237,8 @@ export class EmployeeDetailComponent implements OnInit {
             },
             enable: true,
             speed: {
-              min: 15,
-              max: 25,
+              min: 10,
+              max: 20,
             },
           },
           wobble: {
